@@ -15,3 +15,6 @@ button{
     background-color: aqua;
     border: 1px solid aquamarine;
 }
+button:hover{
+    background-color: grey ;
+}

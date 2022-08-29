@@ -1,8 +1,8 @@
 function getComputerChoice(items){
-  
+    const items = ["rock","paper","scisors"];
     return items[Math.floor(Math.random()*items.length)];
 }
-const items = ["rock","paper","scisors"];
+
 
 
 function playRound(pSelect,cSelect){
@@ -48,4 +48,21 @@ function game(){
         console.log(playRound(pSelector,compSelector))
     }
 }
-game()
+
+
+
+function getValue(e){
+    
+    return this.textContent;
+}
+
+options.forEach((option) =>{
+    option.addEventListener('click', function (){
+        const pInput = this.textContent;
+        const cInput = getComputerChoice(items);
+        const result = playRound(pInput,cInput);
+        const add = document.querySelector("#winner");
+        add.textContent = 'player choice:'+pInput+'result:'+result+'computer input'+cInput;
+    });
+    
+});
